@@ -1,6 +1,6 @@
 import './style.css';
 import { saveToDos, displayTodos } from '../module/addRemove.js';
-import { todos, todoListElement } from '../module/addRemove.js';
+import { todos } from '../module/addRemove.js';
 
 displayTodos();
 const form = document.querySelector('.todo-input');
