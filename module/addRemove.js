@@ -15,7 +15,7 @@ const saveToDos = () => {
       todos = todos.map((todo, index) => {
         return {
           value: index === editing ? todovalue : todo.value,
-          completed: todo.completed,
+          checked: todo.checked,
           color: todo.color,
           index: index,
         };
@@ -24,7 +24,7 @@ const saveToDos = () => {
     } else {
       todos.push({
         value: todovalue,
-        completed: false,
+        checked: false,
         color: '#' + Math.floor(Math.random() * 16777215).toString(16),
         index: todovalue.id,
       });
@@ -43,7 +43,7 @@ const displayTodos = () => {
     todoListElement.innerHTML += `
       <div class="todo" id="${index}">
       <input type="checkbox" class="chech-box" data-action="check" />
-      <p class="list-element" data-action="check">${todo.value}</p>
+      <p class="list-element" data-action="check" >${todo.value}</p>
       <i class="fa-regular fa-pen-to-square" data-action="edit" ></i>
       <i class="fa-sharp fa-solid fa-trash" data-action="delete"></i>
     </div>
@@ -71,14 +71,14 @@ const checkTodo = (todoId) => {
       return {
         value: todo.value,
         color: todo.color,
-        completed: !todo.completed,
+        checked: !todo.checked,
         index: index,
       };
     } else {
       return {
         value: todo.value,
         color: todo.color,
-        completed: todo.completed,
+        checked: todo.checked,
         index: index,
       };
     }
