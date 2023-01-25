@@ -26,7 +26,7 @@ const saveToDos = () => {
         value: todovalue,
         checked: false,
         color: '#' + Math.floor(Math.random() * 16777215).toString(16),
-        index: todovalue.id,
+        index: todos.length,
       });
       toDoInput.value = '';
     }
@@ -42,7 +42,7 @@ const displayTodos = () => {
   todos.forEach((todo, index) => {
     todoListElement.innerHTML += `
       <div class="todo" id="${index}">
-      <input type="checkbox" class="chech-box" data-action="check" />
+      <input type="checkbox" class="chech-box" />
       <p class="list-element" data-action="check" >${todo.value}</p>
       <i class="fa-regular fa-pen-to-square" data-action="edit" ></i>
       <i class="fa-sharp fa-solid fa-trash" data-action="delete"></i>
@@ -93,11 +93,9 @@ const editTodo = (todoId) => {
 };
 
 const deleteTodo = (todoId) => {
-  todos.filter((todo, index) => index !== todoId);
-  editing = -1;
-  todos.length -= 1;
-  displayTodos();
+  todos = todos.filter((todo, index) => todoId !== index);
   localStorage.setItem('todos', JSON.stringify(todos));
+  displayTodos();
 };
 
 export { saveToDos, displayTodos, todos };
