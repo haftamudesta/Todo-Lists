@@ -4,10 +4,11 @@ import { todos } from '../module/addRemove.js';
 
 displayTodos();
 const form = document.querySelector('.todo-input');
+saveToDos();
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   saveToDos();
   displayTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
-  console.log(todos);
 });
+console.log(todos);
