@@ -66,15 +66,17 @@ body {
   margin-right: 40px;
   margin-top: -12px;
 }
+
 .check-through {
   text-decoration: line-through;
 }
+
 .chech-box {
   margin-top: -30px;
 }
 
 .setting {
-  margin-left: 0px;
+  margin-left: 2px;
   margin-top: -12px;
 }
 
@@ -125,6 +127,7 @@ body {
   color: red;
   transition: 300ms right ease-in-out;
 }
+
 .notification-element {
   display: flex;
   right: 600px;

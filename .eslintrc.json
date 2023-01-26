@@ -32,6 +32,10 @@
     "no-use-before-define": "off",
     "import/no-duplicates": "off",
     "no-mutable-exports": "off",
+    "arrow-linebreak": "off",
+    "curly-newline": "off",
+    "import/prefer-default-export": "off",
+    "paren-newline": "off",
     "import/extensions": [
       1,
       {

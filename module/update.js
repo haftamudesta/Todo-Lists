@@ -1,10 +1,10 @@
 import { todos } from './addRemove.js';
+
 const UpdateStatus = () => {
   const checkBox = document.querySelectorAll('.check-box');
   checkBox.forEach((checks) => {
     checks.addEventListener('change', (event) => {
-      //window.location.reload();
-      let target = event.target.parentElement;
+      const target = event.target.parentElement;
 
       if (checks.checked) {
         target.classList.add('check-through');

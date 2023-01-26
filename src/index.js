@@ -1,4 +1,4 @@
-import '../src/style.css';
+import './style.css';
 import { saveToDos, displayTodos, clearAll } from '../module/addRemove.js';
 import { todos } from '../module/addRemove.js';
 import { UpdateStatus } from '../module/update.js';
