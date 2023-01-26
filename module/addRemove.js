@@ -27,7 +27,6 @@ const saveToDos = () => {
         index: todos.length,
       });
     }
-    console.log('completed inside save', todos.completed);
     toDoInput.value = '';
   }
 };
@@ -43,9 +42,7 @@ const displayTodos = () => {
     todoListElement.innerHTML += `
       <div class="todo" id="${index}" draggable="true">
       <input type="checkbox" class="check-box" />
-      <p class="list-element ${
-        todo.checked ? 'line-checked' : ''
-      }" data-action="check" >${todo.value}</p>
+      <p class="list-element  data-action="check" >${todo.value}</p>
       
       <div class="setting">
       <div class="ellips-vertical">
@@ -107,7 +104,6 @@ const deleteTodo = (todoId) => {
   todos = todos.filter((todo, index) => index !== todoId);
   displayTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
-  console.log(todos.completed);
 };
 
 const notifyUser = (message) => {
