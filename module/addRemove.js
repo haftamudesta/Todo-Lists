@@ -48,9 +48,10 @@ const displayTodos = () => {
     <div class="ellips-vertical">
     <i class="fa-solid fa-ellipsis-vertical" ></i>
     </div>
-    <div class="edit-delete">
-  <i class="fa-sharp fa-solid fa-trash" data-action="delete"></i>
-    </div>
+    <ul class="edit-delete">
+    <li><i class="fa-regular fa-pen-to-square" data-action="edit"></i></li>
+    <li><i class="fa-sharp fa-solid fa-trash" data-action="delete"></i></li>
+      </ul>
   </div>
   </div>
         `;
@@ -80,6 +81,7 @@ todoListElement.addEventListener('click', (event) => {
     const todoId = Number(todo.id);
     const action = target.dataset.action;
     action === 'check' && checkTodo(todoId);
+    action === 'edit' && editTodo(todoId);
     action === 'delete' && deleteTodo(todoId);
   }
 });
@@ -102,6 +104,11 @@ const checkTodo = (todoId) => {
   });
   displayTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
+};
+
+const editTodo = (todoId) => {
+  toDoInput.value = todos[todoId].value;
+  editing = todoId;
 };
 
 const deleteTodo = (todoId) => {

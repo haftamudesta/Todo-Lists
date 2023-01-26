@@ -81,9 +81,9 @@ body {
 }
 
 .fa-regular {
-  margin-right: 20px;
+  margin-right: 2px;
   margin-left: 4px;
-  padding-right: 20px;
+  padding-right: 2px;
 }
 
 .fa-solid.fa-ellipsis-vertical {
@@ -94,7 +94,9 @@ body {
 
 .edit-delete {
   position: absolute;
-  margin-left: -40px;
+  list-style: none;
+  display: flex;
+  margin-left: -60px;
   margin-top: -16px;
   transform: scale(0);
 }
