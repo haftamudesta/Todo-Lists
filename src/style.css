@@ -1,6 +1,7 @@
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -41,8 +42,9 @@ body {
 }
 
 .todo-input button {
-  background: blueviolet;
+  background: goldenrod;
   cursor: pointer;
+  padding-top: 12px;
 }
 
 .todo {
@@ -62,21 +64,18 @@ body {
   margin-left: 30px;
   width: 90%;
   margin-right: 40px;
+  margin-top: -12px;
 }
 .check-through {
   text-decoration: line-through;
 }
-
-.line-checked {
-  text-decoration: line-through;
-}
-
 .chech-box {
   margin-top: -30px;
 }
 
 .setting {
   margin-left: 0px;
+  margin-top: -12px;
 }
 
 .fa-regular {
@@ -93,22 +92,9 @@ body {
 
 .edit-delete {
   position: absolute;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
   margin-left: -40px;
-  margin-top: 10px;
-
+  margin-top: -16px;
   transform: scale(0);
-}
-
-.edit-delete li {
-  height: 8px;
-  font-size: 10px;
-  padding: 4px 12px;
-  margin-bottom: 2px;
-  justify-content: center;
-  text-transform: capitalize;
 }
 
 .show-menu {
@@ -119,12 +105,12 @@ body {
   height: 50px;
   background: hsl(0, 29%, 97%);
   margin-top: 20px;
+  padding-top: 14px;
+  padding-left: 12px;
 }
 
-.clear-completed p {
-  margin-left: 40%;
-  padding-top: 20px;
-  cursor: pointer;
+.clear-all {
+  border: none;
 }
 
 .show-notification {
@@ -144,9 +130,4 @@ body {
   right: 600px;
   top: 120px;
   transition: 200ms step-end;
-}
-
-.to-do-list.draging {
-  opacity: 0.5;
-  background: blue;
 }

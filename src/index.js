@@ -5,11 +5,13 @@ import { UpdateStatus } from '../module/update.js';
 
 displayTodos();
 UpdateStatus();
-clearAll();
 const form = document.querySelector('.todo-input');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
   saveToDos();
   displayTodos();
+  UpdateStatus();
+
   localStorage.setItem('todos', JSON.stringify(todos));
 });
+clearAll();

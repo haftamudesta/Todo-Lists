@@ -40,28 +40,32 @@ const displayTodos = () => {
   todoListElement.innerHTML = '';
   todos.forEach((todo, index) => {
     todoListElement.innerHTML += `
-      <div class="todo" id="${index}" draggable="true">
-      <input type="checkbox" class="check-box" />
-      <p class="list-element  data-action="check" >${todo.value}</p>
-      
-      <div class="setting">
-      <div class="ellips-vertical">
-      <i class="fa-solid fa-ellipsis-vertical" ></i>
-      </div>
-      <div class="edit-delete">
-    <i class="fa-sharp fa-solid fa-trash" data-action="delete"></i>
-      </div>
+    <div class="todo" id="${index}">
+    <input type="checkbox" class="check-box" />
+    <p class="list-element  data-action="check" >${todo.value}</p>
+    
+    <div class="setting">
+    <div class="ellips-vertical">
+    <i class="fa-solid fa-ellipsis-vertical" ></i>
     </div>
+    <div class="edit-delete">
+  <i class="fa-sharp fa-solid fa-trash" data-action="delete"></i>
     </div>
+  </div>
+  </div>
         `;
   });
   const unhide = document.querySelectorAll('.ellips-vertical');
   const showElement = document.querySelector('.edit-delete');
+  const todoClass = document.querySelector('.todo');
 
   unhide.forEach((element) =>
     element.addEventListener('click', (e) => {
       if (e.target.classList.contains('fa-solid')) {
         showElement.classList.toggle('show-menu');
+        todoClass.style.backgroundColor = 'goldenrod';
+      } else {
+        todoClass.style.backgroundColor = 'white';
       }
     })
   );
@@ -117,13 +121,13 @@ const notifyUser = (message) => {
   }, 1000);
 };
 
-const clearAll = (todos) => {
+const clearAll = () => {
   const clearElements = document.querySelector('.clear-completed');
   clearElements.addEventListener('click', () => {
-    console.log('todos', todos);
     todos = todos.filter((todo) => todo.completed === false);
     displayTodos();
     localStorage.setItem('todos', JSON.stringify(todos));
   });
 };
+
 export { saveToDos, displayTodos, todos, clearAll };
