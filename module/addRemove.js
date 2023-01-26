@@ -129,5 +129,4 @@ const clearAll = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
   });
 };
-
 export { saveToDos, displayTodos, todos, clearAll };
