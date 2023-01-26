@@ -59,7 +59,7 @@ const displayTodos = () => {
   const showElement = document.querySelector('.edit-delete');
   const todoClass = document.querySelector('.todo');
 
-  unhide.forEach((element) =>
+  unhide.forEach((element) => {
     element.addEventListener('click', (e) => {
       if (e.target.classList.contains('fa-solid')) {
         showElement.classList.toggle('show-menu');
@@ -67,8 +67,8 @@ const displayTodos = () => {
       } else {
         todoClass.style.backgroundColor = 'white';
       }
-    })
-  );
+    });
+  });
 };
 
 todoListElement.addEventListener('click', (event) => {
