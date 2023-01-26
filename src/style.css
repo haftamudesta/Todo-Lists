@@ -1,0 +1,152 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f1f2f5;
+}
+
+.main {
+  width: 40%;
+  margin-left: 20%;
+  margin-top: 10%;
+  padding: 20px;
+  background: #fff;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  background: #fff;
+  border-bottom: 2px solid #f1f2f5;
+  padding-top: 20px;
+}
+
+.todo-input {
+  display: flex;
+  justify-content: space-between;
+  height: 40px;
+  margin-top: 20px;
+  background: #fff;
+  border-bottom: 2px solid #f1f2f5;
+}
+
+#new-list {
+  border: none;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.todo-input button {
+  background: blueviolet;
+  cursor: pointer;
+}
+
+.todo {
+  display: flex;
+  margin-top: 30px;
+  min-height: 40px;
+  border-bottom: 2px solid #f1f2f5;
+  background: #fff;
+  padding-top: 20px;
+}
+
+.check-box {
+  margin-top: -25px;
+}
+
+.list-element {
+  margin-left: 30px;
+  width: 90%;
+  margin-right: 40px;
+}
+.check-through {
+  text-decoration: line-through;
+}
+
+.line-checked {
+  text-decoration: line-through;
+}
+
+.chech-box {
+  margin-top: -30px;
+}
+
+.setting {
+  margin-left: 0px;
+}
+
+.fa-regular {
+  margin-right: 20px;
+  margin-left: 4px;
+  padding-right: 20px;
+}
+
+.fa-solid.fa-ellipsis-vertical {
+  position: relative;
+  transform: scale(2);
+  cursor: pointer;
+}
+
+.edit-delete {
+  position: absolute;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  margin-left: -40px;
+  margin-top: 10px;
+
+  transform: scale(0);
+}
+
+.edit-delete li {
+  height: 8px;
+  font-size: 10px;
+  padding: 4px 12px;
+  margin-bottom: 2px;
+  justify-content: center;
+  text-transform: capitalize;
+}
+
+.show-menu {
+  transform: scale(2);
+}
+
+.clear-completed {
+  height: 50px;
+  background: hsl(0, 29%, 97%);
+  margin-top: 20px;
+}
+
+.clear-completed p {
+  margin-left: 40%;
+  padding-top: 20px;
+  cursor: pointer;
+}
+
+.show-notification {
+  position: absolute;
+  height: 60px;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.9;
+  border-radius: 10px;
+  top: 40px;
+  color: red;
+  transition: 300ms right ease-in-out;
+}
+.notification-element {
+  display: flex;
+  right: 600px;
+  top: 120px;
+  transition: 200ms step-end;
+}
+
+.to-do-list.draging {
+  opacity: 0.5;
+  background: blue;
+}
