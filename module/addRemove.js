@@ -94,6 +94,9 @@ const editTodo = (todoId) => {
 
 const deleteTodo = (todoId) => {
   todos = todos.filter((todo, index) => todoId !== index);
+  todos.forEach((todo, index) => {
+    todo.index = index;
+  });
   displayTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
 };
