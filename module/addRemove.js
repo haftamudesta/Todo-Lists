@@ -32,6 +32,7 @@ const saveToDos = () => {
 };
 
 const displayTodos = () => {
+  let isCompleted = todos.completed === 'true' ? 'line-through' : '';
   if (todos.length === 0) {
     todoListElement.innerHTML =
       '<center>Nothing to do yet! please add to do list </center>';
@@ -41,8 +42,12 @@ const displayTodos = () => {
   todos.forEach((todo, index) => {
     todoListElement.innerHTML += `
     <div class="todo" id="${index}">
-    <input type="checkbox" class="check-box" />
-    <p class="list-element  data-action="check" >${todo.value}</p>
+    <input type="checkbox" class="check-box ${
+      todo.completed ? 'checked' : ''
+    }" data-action="check" />
+    <p class="list-element ${isCompleted}?'check-through':''"  data-action="check" >${
+      todo.value
+    }</p>
     
     <div class="setting">
     <div class="ellips-vertical">
@@ -136,4 +141,23 @@ const clearAll = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
   });
 };
-export { saveToDos, displayTodos, todos, clearAll };
+
+const UpdateStatus = () => {
+  const checkBox = document.querySelectorAll('.check-box');
+  checkBox.forEach((checks) => {
+    checks.addEventListener('change', (event) => {
+      const target = event.target.parentElement;
+
+      if (checks.checked) {
+        target.classList.add('check-through');
+        todos[target.id].completed = 'true';
+        //localStorage.setItem('todos', JSON.stringify(todos));
+      } else {
+        target.classList.remove('check-through');
+        todos[target.id].completed = 'false';
+        //localStorage.setItem('todos', JSON.stringify(todos));
+      }
+    });
+  });
+};
+export { saveToDos, displayTodos, todos, clearAll, UpdateStatus };
