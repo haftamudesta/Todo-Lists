@@ -28,10 +28,14 @@ const saveToDos = () => {
         color: '#' + Math.floor(Math.random() * 16777215).toString(16),
         index: todos.length,
       });
+      todos.forEach((todo, index) => {
+        todo.index = index + 1;
+      });
       toDoInput.value = '';
     }
   }
 };
+
 const displayTodos = () => {
   if (todos.length === 0) {
     todoListElement.innerHTML =
@@ -83,8 +87,11 @@ const checkTodo = (todoId) => {
       };
     }
   });
-  displayTodos();
+  todos.forEach((todo, index) => {
+    todo.index = index + 1;
+  });
   localStorage.setItem('todos', JSON.stringify(todos));
+  displayTodos();
 };
 
 const editTodo = (todoId) => {
@@ -95,10 +102,10 @@ const editTodo = (todoId) => {
 const deleteTodo = (todoId) => {
   todos = todos.filter((todo, index) => todoId !== index);
   todos.forEach((todo, index) => {
-    todo.index = index;
+    todo.index = index + 1;
   });
-  displayTodos();
   localStorage.setItem('todos', JSON.stringify(todos));
+  displayTodos();
 };
 
 export { saveToDos, displayTodos, todos };
