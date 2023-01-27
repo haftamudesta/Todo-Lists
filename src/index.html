@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do List with Webpack</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/dcdd89c74c.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">
+        <h2>Today's To Do</h2>
+        <i class="fas fa-sync"></i>
+      </div>
+      <div class="to-do-input">
+        <form class="todo-input">
+          <input
+            type="text"
+            id="new-list"
+            name="new-list"
+            placeholder="Add yuor list..."
+          />
+          <button type="submit">+</button>
+        </form>
+      </div>
+      <div class="to-do-list"></div>
+      <div class="clear-completed">
+        <p>Clear all completed</p>
+      </div>
+    </div>
+  </body>
+</html>
