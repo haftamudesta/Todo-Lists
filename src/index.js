@@ -1,12 +1,7 @@
 import './style.css';
-import {
-  saveToDos,
-  displayTodos,
-  clearAll,
-  UpdateStatus,
-} from '../module/addRemove.js';
+import { saveToDos, displayTodos, clearAll } from '../module/addRemove.js';
 import { todos } from '../module/addRemove.js';
-//import { UpdateStatus } from '../module/update.js';
+import { UpdateStatus } from '../module/update.js';
 
 displayTodos();
 UpdateStatus();

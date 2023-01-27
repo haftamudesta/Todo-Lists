@@ -32,7 +32,6 @@ const saveToDos = () => {
 };
 
 const displayTodos = () => {
-  let isCompleted = todos.completed === 'true' ? 'line-through' : '';
   if (todos.length === 0) {
     todoListElement.innerHTML =
       '<center>Nothing to do yet! please add to do list </center>';
@@ -141,23 +140,4 @@ const clearAll = () => {
     localStorage.setItem('todos', JSON.stringify(todos));
   });
 };
-
-const UpdateStatus = () => {
-  const checkBox = document.querySelectorAll('.check-box');
-  checkBox.forEach((checks) => {
-    checks.addEventListener('change', (event) => {
-      const target = event.target.parentElement;
-
-      if (checks.checked) {
-        target.classList.add('check-through');
-        todos[target.id].completed = 'true';
-        //localStorage.setItem('todos', JSON.stringify(todos));
-      } else {
-        target.classList.remove('check-through');
-        todos[target.id].completed = 'false';
-        //localStorage.setItem('todos', JSON.stringify(todos));
-      }
-    });
-  });
-};
-export { saveToDos, displayTodos, todos, clearAll, UpdateStatus };
+export { saveToDos, displayTodos, todos, clearAll };
