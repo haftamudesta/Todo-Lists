@@ -1,6 +1,26 @@
 {
-  "dependencies": {
-    "gh-pages": "^5.0.0"
+  "name": "todo-lists",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack serve",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --watch",
+    "start": "webpack serve --open",
+    "build": "webpack",
+    "deploy": "gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haftamudesta/Todo-Lists.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://haftamudesta/github.io/Todo-Lists",
+  "bugs": {
+    "url": "https://github.com/haftamudesta/Todo-Lists/issues"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
