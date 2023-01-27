@@ -42,12 +42,12 @@ const displayTodos = () => {
   todos.forEach((todo, index) => {
     todoListElement.innerHTML += `
     <div class="todo" id="${index}">
-    <input type="checkbox" class="check-box ${
+    <input type="checkbox" class="check-box" ${
       todo.completed ? 'checked' : ''
-    }" data-action="check" />
-    <p class="list-element ${isCompleted}?'check-through':''"  data-action="check" >${
-      todo.value
-    }</p>
+    } data-action="check" />
+    <p class="list-element ${
+      todo.completed ? 'check-through' : ''
+    }"  data-action="check" >${todo.value}</p>
     
     <div class="setting">
     <div class="ellips-vertical">
