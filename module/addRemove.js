@@ -15,7 +15,7 @@ const saveToDos = () => {
       todos = todos.map((todo, index) => {
         return {
           value: index === editing ? todovalue : todo.value,
-          checked: todo.checked,
+          completed: todo.completed,
           color: todo.color,
           index: index,
         };
@@ -24,7 +24,7 @@ const saveToDos = () => {
     } else {
       todos.push({
         value: todovalue,
-        checked: false,
+        completed: false,
         color: '#' + Math.floor(Math.random() * 16777215).toString(16),
         index: todos.length,
       });
@@ -71,14 +71,14 @@ const checkTodo = (todoId) => {
       return {
         value: todo.value,
         color: todo.color,
-        checked: !todo.checked,
+        completed: !todo.completed,
         index: index,
       };
     } else {
       return {
         value: todo.value,
         color: todo.color,
-        checked: todo.checked,
+        completed: todo.completed,
         index: index,
       };
     }
@@ -94,8 +94,8 @@ const editTodo = (todoId) => {
 
 const deleteTodo = (todoId) => {
   todos = todos.filter((todo, index) => todoId !== index);
-  localStorage.setItem('todos', JSON.stringify(todos));
   displayTodos();
+  localStorage.setItem('todos', JSON.stringify(todos));
 };
 
 export { saveToDos, displayTodos, todos };
